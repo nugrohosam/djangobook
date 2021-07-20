@@ -1,3 +1,4 @@
+from django.db.models.manager import BaseManager
 from api.models import Book
 from api.dto.v1.book_dto import BookDto
 
@@ -21,3 +22,10 @@ class BookRepository():
     def delete(self, id):
         book = Book.objects.get(pk=id)
         book.delete()
+
+class BookQueryRepository():
+    def get(self) -> BaseManager:
+        return Book.objects.all()
+
+    def detail(self, id):
+        return Book.objects.get(pk=id)

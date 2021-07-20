@@ -1,11 +1,12 @@
 
-from api.repositories.book_repository import BookRepository
+from api.repositories.book_repository import BookQueryRepository, BookRepository
 from django.db.models.manager import BaseManager
 from api.models import Book
 from api.dto.v1.book_dto import BookDto
 
 class BookBusiness():
     book_repository = BookRepository()
+    book_query_repository = BookQueryRepository()
 
     def create(self, book_dto: BookDto) -> bool:
         self.book_repository.create(book_dto=book_dto)
@@ -20,8 +21,8 @@ class BookBusiness():
         return True
 
     def get(self) -> BaseManager:
-        return Book.objects.all()
+        return self.book_query_repository.get()
 
     def get_detail(self, id) -> BaseManager:
-        return Book.objects.get(pk=id)
+        return self.book_query_repository.detail(id=id)
 
