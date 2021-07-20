@@ -12,5 +12,4 @@ class RoleMiddleware:
         # Code to be executed for each request/response after
         # the view is called.
 
-        print('role middleware called....')
         return response
