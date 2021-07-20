@@ -1,8 +1,4 @@
-
-class BookDto:
-    title = None
-    page = None
-
+class BookDto():
     def __init__(self, title, page):
         self.title = title
         self.page = page
