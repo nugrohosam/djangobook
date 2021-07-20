@@ -10,13 +10,13 @@ def json_to_data(json_body: bytes):
     stream = io.BytesIO(json_body)
     return JSONParser().parse(stream)
 
-def reponse_success(message):
+def response_success(message):
     response = {}
     response['version'] = '0.0.1'
     response['message'] = message
     return HttpResponse(JSONRenderer().render(response), content_type='application/json')
 
-def reponse_data(data: object):
+def response_data(data: object):
     response = {}
     response['version'] = '0.0.1'
     response['data'] = data

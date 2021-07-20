@@ -5,7 +5,8 @@ from api.models import Book
 
 
 class BookResponse():
-    def __init__(self, title, page):
+    def __init__(self, id, title, page):
+        self.id = id
         self.title = title
         self.page = page
 
