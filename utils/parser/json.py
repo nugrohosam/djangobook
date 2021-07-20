@@ -22,8 +22,8 @@ def response_data(data: object):
     response['data'] = data
     return HttpResponse(JSONRenderer().render(response), content_type='application/json')
 
-def response_items(data: list):
+def response_items(items: list):
     response = {}
     response['version'] = '0.0.1'
-    response['items'] = data
+    response['items'] = items
     return HttpResponse(JSONRenderer().render(response), content_type='application/json')
