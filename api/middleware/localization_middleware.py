@@ -12,5 +12,4 @@ class LocalizationMiddleware:
         # Code to be executed for each request/response after
         # the view is called.
 
-        print('localization middleware called....')
         return response

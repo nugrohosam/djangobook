@@ -12,5 +12,4 @@ class PlatformMiddleware:
         # Code to be executed for each request/response after
         # the view is called.
 
-        print('platform middleware called....')
         return response

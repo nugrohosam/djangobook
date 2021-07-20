@@ -1,13 +1,13 @@
-import array
+from array import array
+import json
+from json.encoder import JSONEncoder
+from api.models import Book
+
 
 class BookResponse():
+    def __init__(self, title, page):
+        self.title = title
+        self.page = page
 
-    def one(bookModel):
-        title = bookModel.title
-    
-    def many(self, booksModel):
-        bookArr = array()
-        for bookModel in booksModel:
-            bookFormated = self.one(bookModel)
-            bookArr.append(bookFormated)
-        return bookArr
+    def to_json(self):
+        return self.__dict__
